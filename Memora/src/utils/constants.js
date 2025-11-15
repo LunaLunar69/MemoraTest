@@ -1,0 +1,2 @@
+export const ORDER_STATUS = { SIN_PAGAR: 'SIN_PAGAR', PAGADO: 'PAGADO', PAGADO_ENTREGADO: 'PAGADO_ENTREGADO' }
+export const BANK_INFO = { banco: 'Banco Ejemplo', cuenta: '0000000000', clabe: '000000000000000000', titular: 'Titular Ejemplo' }

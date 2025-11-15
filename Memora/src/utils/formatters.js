@@ -1,0 +1,1 @@
+export const formatMoney = n => new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(n || 0)
