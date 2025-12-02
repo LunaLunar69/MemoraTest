@@ -43,7 +43,7 @@ export default function AtaudDetailPanel({ ataud, onClose, onProceed }) {
   return (
     <div
       id="ataud-detail-panel"
-      className="fixed inset-0 z-40 flex items-center justify-center px-4 py-8 
+      className="fixed inset-0 z-40 flex items-center justify-center px-3 sm:px-4 py-6 sm:py-8
                  bg-black/40 backdrop-blur-sm"
     >
       {/* Capa clicable para cerrar */}
@@ -56,12 +56,14 @@ export default function AtaudDetailPanel({ ataud, onClose, onProceed }) {
 
       <div
         ref={panelRef}
-        className="relative max-w-4xl w-full rounded-3xl border border-[#E3D7CC] bg-[#FDF9F5] 
-                   shadow-2xl overflow-hidden transition-all duration-300 opacity-0 translate-y-6 scale-[0.97]"
+        className="relative w-full max-w-lg sm:max-w-xl lg:max-w-3xl
+                   rounded-2xl sm:rounded-3xl border border-[#E3D7CC] bg-[#FDF9F5]
+                   shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto
+                   transition-all duration-300 opacity-0 translate-y-6 scale-[0.97]"
       >
-        <div className="grid md:grid-cols-[1.2fr,1fr]">
+        <div className="grid md:grid-cols-[1.1fr,1fr]">
           {/* Imagen */}
-          <div className="relative bg-[#EDE0D3]">
+          <div className="relative bg-[#EDE0D3] min-h-[220px] md:min-h-full">
             {hasImage ? (
               <img
                 src={ataud.imagen_url}
@@ -69,12 +71,12 @@ export default function AtaudDetailPanel({ ataud, onClose, onProceed }) {
                 className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-64 bg-gradient-to-br from-[#EDE0D3] via-[#E3D3C3] to-[#D4B597]" />
+              <div className="w-full h-full bg-gradient-to-br from-[#EDE0D3] via-[#E3D3C3] to-[#D4B597]" />
             )}
           </div>
 
           {/* Detalles */}
-          <div className="p-6 space-y-5">
+          <div className="p-4 sm:p-6 space-y-5">
             {/* Botón X arriba a la derecha */}
             <div className="flex justify-end">
               <button
@@ -135,7 +137,7 @@ export default function AtaudDetailPanel({ ataud, onClose, onProceed }) {
                 </p>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 <button
                   className="rounded-full border border-[#D0BFAE] px-5 py-2 text-sm text-[#5B3A20] hover:bg-[#F5F2EF] transition-colors"
                   onClick={handleClose}
